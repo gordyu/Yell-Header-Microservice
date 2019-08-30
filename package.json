@@ -1,13 +1,12 @@
 {
-  "name": "yell-reviews-service",
+  "name": "yell-header",
   "version": "0.0.1",
-  "description": "yell-reviews-service",
-  "main": "index.js",
+  "description": "yell-header",
+  "main": "server.js",
   "scripts": {
     "build": "webpack -d --watch",
-    "start:dev": "nodemon server/index.js",
-    "seed": "node database/seed.js",
-    "start": "node server/index.js"
+    "start-dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "author": "Gordon Yu",
   "license": "to kill",
@@ -16,6 +15,8 @@
     "babel-loader": "^6.3.2",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "dotenv-webpack": "^1.7.0",
     "webpack": "^2.2.1"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "express": "^4.17.1",
+    "google-map-react": "^1.1.4",
     "mongodb": "^3.2.6",
     "mongoose": "^5.5.11",
     "nodemon": "^1.19.1",

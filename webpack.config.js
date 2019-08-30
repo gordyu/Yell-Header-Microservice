@@ -1,6 +1,7 @@
 var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/src');
 var DIST_DIR = path.join(__dirname, '/client/dist');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: `${SRC_DIR}/index.jsx`,
@@ -8,6 +9,7 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR
   },
+  plugins: [ new Dotenv() ],
   module : {
     loaders : [
       {
@@ -15,9 +17,11 @@ module.exports = {
         include : SRC_DIR,
         loader : 'babel-loader',      
         query: {
-          presets: ['react', 'es2015']
+          presets: ['react', 'es2015', 'stage-0']
         }
       }
     ]
   }
 };
+
+process.noDeprecation = true;
